@@ -4,5 +4,6 @@ defmodule EnsureConsistencyTest do
 
   test "greets the world" do
     assert EnsureConsistency.hello() == :world
+    assert EnsureConsistency.hello("John", "Doe") == "Hello, John Doe!"
   end
 end

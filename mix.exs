@@ -9,7 +9,6 @@ defmodule EnsureConsistency.MixProject do
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       aliases: aliases(),
-      # <-- add this line
       test_coverage: [tool: ExCoveralls]
     ]
   end
@@ -26,23 +25,26 @@ defmodule EnsureConsistency.MixProject do
   defp deps do
     [
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
-      {:dialyxir, "~> 1.3", only: [:dev], runtime: false},
+      {:dialyxir, "~> 1.4", only: [:dev], runtime: false},
       {:excoveralls, "~> 0.15", only: :test},
-      {:ex_doc, "~> 0.30", only: [:dev], runtime: false},
-      {:inch_ex, "~> 2.0", only: [:dev, :test], runtime: false}
+      {:ex_doc, "~> 0.38", only: [:dev], runtime: false},
+      {:inch_ex, "~> 2.0", only: [:dev, :test], runtime: false},
+      {:sobelow, "~> 0.14", only: :dev},
+      {:phoenix, "~> 1.7.0"},
+      {:plug, "~> 1.18.0"}
     ]
   end
 
   defp aliases do
     [
       ensure_consistency: [
-        "format --check-formatted",
-        "test",
-        "dialyzer",
-        "coveralls",
-        "credo --strict",
-        "inch",
-        "hex.audit"
+        "format --check-formatted",   # ensures code is formatted
+        "test",                        # runs all tests
+        "dialyzer",                    # static type analysis
+        "coveralls",                   # test coverage report
+        "credo --strict",              # linting & code style
+        "sobelow --exit",              # Phoenix security checks
+        "hex.audit"                    # dependency audit
       ]
     ]
   end
