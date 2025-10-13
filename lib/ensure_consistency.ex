@@ -25,9 +25,9 @@ defmodule EnsureConsistency do
       "Hello, John Doe!"
 
   """
-  def hello(name, lastname) do
-    name = name <> " " <> lastname
-    "Hello, #{name}!"
+  def hello( name , lastname ) do
+    name =name<>" "<>lastname
+    IO.puts("Hello, #{name}!")
   end
 
   @spec sum(number(), number()) :: number()
