@@ -27,9 +27,7 @@ defmodule EnsureConsistency.MixProject do
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
       {:dialyxir, "~> 1.4", only: [:dev], runtime: false},
       {:excoveralls, "~> 0.18", only: [:dev, :test], runtime: false},
-      {:bureaucrat, "~> 0.2.10", only: [:dev, :test], runtime: false},
       {:ex_doc, "~> 0.38", only: [:dev], runtime: false},
-      {:inch_ex, "~> 2.0", only: [:dev, :test], runtime: false},
       {:sobelow, "~> 0.14", only: :dev},
       {:phoenix, "~> 1.7.0"},
       {:plug, "~> 1.18.0"}
@@ -48,7 +46,7 @@ defmodule EnsureConsistency.MixProject do
         "hex.audit"                    # dependency audit
       ],
 
-      # Quick formatting
+      # Quick aliases for individual checks
       format_check: ["format --check-formatted"],
       lint: ["credo --strict"],
       coverage: ["coveralls.html"],
