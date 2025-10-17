@@ -14,12 +14,9 @@ It includes:
 
 ## Getting Started
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `ensure_consistency` to your list of dependencies in `mix.exs`:
-
+Clone this repository  if you want to give it a try:
 ```bash
-# Clone this repository as a starting point for your new Elixir project:
-git clone https://github.com/<your-username>/ensure_consistency.git my_app
+git clone git@github.com:PanyPy/elixir-ensure-consistency.git
 cd my_app
 mix deps.get
 ```
@@ -28,7 +25,7 @@ mix deps.get
 
 Run all quality and consistency checks in one go:
 ```bash
-mix ensure_consistency
+MIX_ENV=ci mix ensure_consistency
 ```
 
 ## Learn More
